@@ -23,10 +23,9 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     # Get the urdf file
-    TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
-    model_folder = 'turtlebot3_' + TURTLEBOT3_MODEL
+    model_folder = 'turtlebot3_burger_cam'
     urdf_path = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('amar_simulation'),
         'models',
         model_folder,
         'model.sdf'
@@ -49,7 +48,7 @@ def generate_launch_description():
         package='ros_gz_sim',
         executable='create',
         arguments=[
-            '-name', TURTLEBOT3_MODEL,
+            '-name', 'turtlebot3_burger_cam',
             '-file', urdf_path,
             '-x', x_pose,
             '-y', y_pose,
@@ -59,7 +58,7 @@ def generate_launch_description():
     )
 
     bridge_params = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('amar_simulation'),
         'params',
         model_folder+'_bridge.yaml'
     )
@@ -90,6 +89,6 @@ def generate_launch_description():
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
     ld.add_action(start_gazebo_ros_bridge_cmd)
-    ld.add_action(start_gazebo_ros_image_bridge_cmd) if TURTLEBOT3_MODEL != 'burger' else None
+    # ld.add_action(start_gazebo_ros_image_bridge_cmd) if TURTLEBOT3_MODEL != 'burger' else None
 
     return ld
