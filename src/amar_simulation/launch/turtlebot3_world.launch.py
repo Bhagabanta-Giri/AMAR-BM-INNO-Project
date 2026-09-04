@@ -27,7 +27,7 @@ from launch.substitutions import LaunchConfiguration
 
 
 def generate_launch_description():
-    launch_file_dir = os.path.join(get_package_share_directory('turtlebot3_gazebo'), 'launch')
+    launch_file_dir = os.path.join(get_package_share_directory('amar_simulation'), 'launch')
     ros_gz_sim = get_package_share_directory('ros_gz_sim')
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
@@ -35,7 +35,7 @@ def generate_launch_description():
     y_pose = LaunchConfiguration('y_pose', default='-0.5')
 
     world = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('amar_simulation'),
         'worlds',
         'turtlebot3_world.world'
     )
@@ -74,7 +74,7 @@ def generate_launch_description():
     set_env_vars_resources = AppendEnvironmentVariable(
             'GZ_SIM_RESOURCE_PATH',
             os.path.join(
-                get_package_share_directory('turtlebot3_gazebo'),
+                get_package_share_directory('amar_simulation'),
                 'models'))
 
     ld = LaunchDescription()

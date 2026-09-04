@@ -7,21 +7,21 @@ from launch.actions import DeclareLaunchArgument
 from launch.substitutions import LaunchConfiguration
 from launch.conditions import UnlessCondition
 from launch_ros.actions import Node
-import xacro, urdf
+import xacro
 
 
 def generate_launch_description():
 
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    urdf_file_name = 'turtlebot3_burger.urdf'
+    urdf_file_name = 'turtlebot3_burger_cam.urdf.xacro'
 
-    # print('xacro_file_name : {}'.format(urdf_file_name))
+    print('xacro_file_name : {}'.format(urdf_file_name))
 
     xacro_file = os.path.join(
         get_package_share_directory('amar_description'),
         'urdf',
         urdf_file_name)
-    robot_description_config = urdf.process_file(xacro_file)
+    robot_description_config = xacro.process_file(xacro_file)
     robot_urdf = robot_description_config.toxml()
 
     return LaunchDescription([

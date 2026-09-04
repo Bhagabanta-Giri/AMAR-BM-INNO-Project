@@ -75,14 +75,13 @@ import xacro
 
 def generate_launch_description():
 
-    TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
-    urdf_file_name = 'turtlebot3_' + TURTLEBOT3_MODEL + '.urdf.xacro'
+    urdf_file_name = 'turtlebot3_burger_cam.urdf.xacro'
 
     print('xacro_file_name : {}'.format(urdf_file_name))
 
     xacro_file = os.path.join(
-        get_package_share_directory('turtlebot3_gazebo'),
+        get_package_share_directory('amar_description'),
         'urdf',
         urdf_file_name)
     robot_description_config = xacro.process_file(xacro_file)

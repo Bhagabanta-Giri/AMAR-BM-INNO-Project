@@ -63,12 +63,11 @@
       <uri>https://fuel.gazebosim.org/1.0/OpenRobotics/models/Sun</uri>
     </include>
 
-    <model name="turtlebot3_house">
-      <static>1</static>
-      <include>
-        <uri>model://turtlebot3_house</uri>
-      </include>
-    </model>
+
+    <include>
+      <uri>model://turtlebot3_house</uri>
+    </include>
+
 
   </world>
 </sdf>
