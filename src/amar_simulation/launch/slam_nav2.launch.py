@@ -11,7 +11,7 @@ def generate_launch_description():
 
     # Dynamically find the params file instead of hardcoding the home directory
     amar_sim_dir = get_package_share_directory('amar_simulation')
-    nav2_params_path = os.path.join(amar_sim_dir, 'params', 'jnav2_params.yaml')
+    nav2_params_path = os.path.join(amar_sim_dir, 'params', 'snav2_params.yaml')
 
     # 1. Nav2 Navigation Launch
     nav2_launch_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
