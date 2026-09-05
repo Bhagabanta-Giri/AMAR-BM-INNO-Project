@@ -8,33 +8,33 @@
     <link name="base_link">
 
       <inertial>
-        <pose>-0.032 0 0.070 0 0 0</pose>
+        <pose>-0.080 0 0.175 0 0 0</pose>
         <inertia>
-          <ixx>7.2397393e-01</ixx>
+          <ixx>70.7006</ixx>
           <ixy>4.686399e-10</ixy>
           <ixz>-1.09525703e-08</ixz>
-          <iyy>7.2397393e-01</iyy>
+          <iyy>70.7006</iyy>
           <iyz>2.8582649e-09</iyz>
-          <izz>6.53050163e-01</izz>
+          <izz>63.7744</izz>
         </inertia>
-        <mass>8.2573504e-01</mass>
+        <mass>12.9021</mass>
       </inertial>
 
       <collision name="base_collision">
-        <pose>-0.032 0 0.070 0 0 0</pose>
+        <pose>-0.080 0 0.175 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.140 0.140 0.140</size>
+            <size>0.350 0.350 0.350</size>
           </box>
         </geometry>
       </collision>
 
       <visual name="base_visual">
-        <pose>-0.032 0 0 0 0 0</pose>
+        <pose>-0.080 0 0 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://turtlebot3_common/meshes/bases/burger_base.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <scale>0.0025 0.0025 0.0025</scale>
           </mesh>
         </geometry>
         <material>
@@ -96,34 +96,34 @@
 
     <link name="base_scan">
       <inertial>
-        <pose>-0.020 0 0.161 0 0 0</pose>
+        <pose>-0.050 0 0.4025 0 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
+          <ixx>0.09765</ixx>
           <ixy>0.000</ixy>
           <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
+          <iyy>0.09765</iyy>
           <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <izz>0.09765</izz>
         </inertia>
-        <mass>0.114</mass>
+        <mass>1.78125</mass>
       </inertial>
 
       <collision name="lidar_sensor_collision">
-        <pose>-0.020 0 0.161 0 0 0</pose>
+        <pose>-0.050 0 0.4025 0 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.0508</radius>
-            <length>0.055</length>
+            <radius>0.1270</radius>
+            <length>0.1375</length>
           </cylinder>
         </geometry>
       </collision>
 
       <visual name="lidar_sensor_visual">
-        <pose>-0.032 0 0.171 0 0 0</pose>
+        <pose>-0.080 0 0.4275 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://turtlebot3_common/meshes/sensors/lds.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <scale>0.0025 0.0025 0.0025</scale>
           </mesh>
         </geometry>
         <material>
@@ -135,7 +135,7 @@
       <sensor name="hls_lfcd_lds" type="gpu_lidar">
         <always_on>true</always_on>
         <visualize>false</visualize>
-        <pose>-0.032 0 0.171 0 0 0</pose>
+        <pose>-0.080 0 0.4275 0 0 0</pose>
         <update_rate>5</update_rate>
         <topic>scan</topic>
         <gz_frame_id>base_scan</gz_frame_id>
@@ -165,28 +165,27 @@
     <link name="wheel_left_link">
 
       <inertial>
-        <pose>0 0.08 0.023 -1.57 0 0</pose>
+        <pose>0 0.20 0.0575 -1.57 0 0</pose>
         <inertia>
-          <ixx>1.8158194e-03</ixx>
+          <ixx>0.17733</ixx>
           <ixy>-9.3392e-12</ixy>
           <ixz>1.04909e-11</ixz>
-          <iyy>3.2922126e-03</iyy>
+          <iyy>0.3215</iyy>
           <iyz>5.75694e-11</iyz>
-          <izz>1.8158194e-03</izz>
+          <izz>0.17733</izz>
         </inertia>
-        <mass>2.8498940e-02</mass>
+        <mass>0.44529</mass>
       </inertial>
 
       <collision name="wheel_left_collision">
-        <pose>0 0.08 0.023 -1.57 0 0</pose>
+        <pose>0 0.20 0.0575 -1.57 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.033</radius>
-            <length>0.018</length>
+            <radius>0.0825</radius>
+            <length>0.045</length>
           </cylinder>
         </geometry>
         <surface>
-          <!-- This friction pamareter don't contain reliable data!! -->
           <friction>
             <ode>
               <mu>100000.0</mu>
@@ -210,11 +209,11 @@
       </collision>
 
       <visual name="wheel_left_visual">
-        <pose>0 0.08 0.023 0 0 0</pose>
+        <pose>0 0.20 0.0575 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://turtlebot3_common/meshes/wheels/left_tire.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <scale>0.0025 0.0025 0.0025</scale>
           </mesh>
         </geometry>
         <material>
@@ -227,28 +226,27 @@
     <link name="wheel_right_link">
 
       <inertial>
-        <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
+        <pose>0 -0.20 0.0575 -1.57 0 0</pose>
         <inertia>
-          <ixx>1.8158194e-03</ixx>
+          <ixx>0.17733</ixx>
           <ixy>-9.3392e-12</ixy>
           <ixz>1.04909e-11</ixz>
-          <iyy>3.2922126e-03</iyy>
+          <iyy>0.3215</iyy>
           <iyz>5.75694e-11</iyz>
-          <izz>1.8158194e-03</izz>
+          <izz>0.17733</izz>
         </inertia>
-        <mass>2.8498940e-02</mass>
+        <mass>0.44529</mass>
       </inertial>
 
       <collision name="wheel_right_collision">
-        <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
+        <pose>0 -0.20 0.0575 -1.57 0 0</pose>
         <geometry>
           <cylinder>
-            <radius>0.033</radius>
-            <length>0.018</length>
+            <radius>0.0825</radius>
+            <length>0.045</length>
           </cylinder>
         </geometry>
         <surface>
-          <!-- This friction pamareter don't contain reliable data!! -->
           <friction>
             <ode>
               <mu>100000.0</mu>
@@ -272,11 +270,11 @@
       </collision>
 
       <visual name="wheel_right_visual">
-        <pose>0.0 -0.08 0.023 0 0 0</pose>
+        <pose>0 -0.20 0.0575 0 0 0</pose>
         <geometry>
           <mesh>
             <uri>model://turtlebot3_common/meshes/wheels/right_tire.stl</uri>
-            <scale>0.001 0.001 0.001</scale>
+            <scale>0.0025 0.0025 0.0025</scale>
           </mesh>
         </geometry>
         <material>
@@ -287,22 +285,22 @@
     </link>
 
     <link name='caster_back_link'>
-      <pose>-0.081 0 -0.004 -1.57 0 0</pose>
+      <pose>-0.2025 0 -0.010 -1.57 0 0</pose>
       <inertial>
-        <mass>0.005</mass>
+        <mass>0.078125</mass>
         <inertia>
-          <ixx>0.001</ixx>
+          <ixx>0.09765</ixx>
           <ixy>0.000</ixy>
           <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
+          <iyy>0.09765</iyy>
           <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <izz>0.09765</izz>
         </inertia>
       </inertial>
       <collision name='collision'>
         <geometry>
           <sphere>
-            <radius>0.005000</radius>
+            <radius>0.0125</radius>
           </sphere>
         </geometry>
         <surface>
@@ -323,19 +321,19 @@
     <link name="camera_link">
 
       <inertial>
-        <pose>0.076 0.0 0.093 0 0 0</pose>
+        <pose>0.190 0.0 0.2325 0 0 0</pose>
         <inertia>
-          <ixx>0.001</ixx>
+          <ixx>0.09765</ixx>
           <ixy>0.000</ixy>
           <ixz>0.000</ixz>
-          <iyy>0.001</iyy>
+          <iyy>0.09765</iyy>
           <iyz>0.000</iyz>
-          <izz>0.001</izz>
+          <izz>0.09765</izz>
         </inertia>
-        <mass>0.035</mass>
+        <mass>0.546875</mass>
       </inertial>
 
-      <pose>0.076 0.0 0.093 0 0 0</pose>
+      <pose>0.190 0.0 0.2325 0 0 0</pose>
       <sensor name="camera" type="wideanglecamera">
         <always_on>true</always_on>
         <visualize>true</visualize>
@@ -373,13 +371,13 @@
     <joint name="base_joint" type="fixed">
       <parent>base_footprint</parent>
       <child>base_link</child>
-      <pose>0.0 0.0 0.010 0 0 0</pose>
+      <pose>0.0 0.0 0.025 0 0 0</pose>
     </joint>
 
     <joint name="wheel_left_joint" type="revolute">
       <parent>base_link</parent>
       <child>wheel_left_link</child>
-      <pose>0.0 0.08 0.023 -1.57 0 0</pose>
+      <pose>0 0.20 0.0575 -1.57 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -391,7 +389,7 @@
     <joint name="wheel_right_joint" type="revolute">
       <parent>base_link</parent>
       <child>wheel_right_link</child>
-      <pose>0.0 -0.08 0.023 -1.57 0 0</pose>
+      <pose>0 -0.20 0.0575 -1.57 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
@@ -408,7 +406,7 @@
     <joint name="imu_joint" type="fixed">
       <parent>base_link</parent>
       <child>imu_link</child>
-      <pose>-0.032 0 0.068 0 0 0</pose>
+      <pose>-0.080 0 0.170 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
@@ -417,7 +415,7 @@
     <joint name="lidar_joint" type="fixed">
       <parent>base_link</parent>
       <child>base_scan</child>
-      <pose>-0.032 0 0.171 0 0 0</pose>
+      <pose>-0.080 0 0.4275 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
@@ -426,35 +424,24 @@
     <joint name="camera_joint" type="fixed">
       <parent>base_link</parent>
       <child>camera_link</child>
-      <pose>0.040 -0.000 0.110 0 0 0</pose>
+      <pose>0.100 -0.000 0.275 0 0 0</pose>
       <axis>
         <xyz>0 0 1</xyz>
       </axis>
     </joint>
 
-
     <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
-
-      <!-- wheels -->
       <left_joint>wheel_left_joint</left_joint>
       <right_joint>wheel_right_joint</right_joint>
-
-      <!-- kinematics -->
-      <wheel_separation>0.160</wheel_separation>
-      <wheel_radius>0.033</wheel_radius>
-
-      <!-- limits -->
+      <wheel_separation>0.400</wheel_separation>
+      <wheel_radius>0.0825</wheel_radius>
       <max_linear_acceleration>1.0</max_linear_acceleration>
-
       <topic>cmd_vel</topic>
-
       <odom_topic>odom</odom_topic>
       <frame_id>odom</frame_id>
       <child_frame_id>base_footprint</child_frame_id>
       <odom_publisher_frequency>30</odom_publisher_frequency>
-
       <tf_topic>/tf</tf_topic>
-
     </plugin>
 
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">

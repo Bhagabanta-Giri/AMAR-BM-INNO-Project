@@ -15,6 +15,12 @@ def generate_launch_description():
     use_sim_time = LaunchConfiguration('use_sim_time', default='false')
     urdf_file_name = 'turtlebot3_burger_cam.urdf.xacro'
 
+    rviz_config = os.path.join(
+        get_package_share_directory('amar_description'),
+        'rviz',
+        'model.rviz'
+    )
+
     print('xacro_file_name : {}'.format(urdf_file_name))
 
     xacro_file = os.path.join(
@@ -48,4 +54,10 @@ def generate_launch_description():
                 'publish_joints': True
             }],
         ),
+        Node(
+            package='rviz2',
+            executable='rviz2',
+            arguments=['-d', rviz_config],
+            output='screen'
+        )
     ])

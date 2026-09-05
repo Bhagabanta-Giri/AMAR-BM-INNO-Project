@@ -26,8 +26,6 @@ data_files_list = [
          (os.path.join('share', package_name, 'launch'),
              glob('launch/*.py')),
          # [(os.path.join('share', package_name, root), [os.path.join(root, f) for f in files]) for root, dirs, files in os.walk('models') if files],
-         (os.path.join('share', package_name, 'rviz/'),
-             glob('rviz/*.rviz')),
          (os.path.join('share', package_name, 'urdf/'),
              glob('urdf/*.urdf.xacro')),
          (os.path.join('share', package_name, 'worlds/'),

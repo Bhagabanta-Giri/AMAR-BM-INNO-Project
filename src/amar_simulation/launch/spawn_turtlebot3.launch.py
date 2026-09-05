@@ -32,16 +32,16 @@ def generate_launch_description():
     )
 
     # Launch configuration variables specific to simulation
-    x_pose = LaunchConfiguration('x_pose', default='0.0')
-    y_pose = LaunchConfiguration('y_pose', default='0.0')
+    x_pose = LaunchConfiguration('x_pose', default='0')
+    y_pose = LaunchConfiguration('y_pose', default='-3')
 
     # Declare the launch arguments
     declare_x_position_cmd = DeclareLaunchArgument(
-        'x_pose', default_value='0.0',
+        'x_pose', default_value='0',
         description='Specify namespace of the robot')
 
     declare_y_position_cmd = DeclareLaunchArgument(
-        'y_pose', default_value='0.0',
+        'y_pose', default_value='-3',
         description='Specify namespace of the robot')
 
     start_gazebo_ros_spawner_cmd = Node(
@@ -52,7 +52,7 @@ def generate_launch_description():
             '-file', urdf_path,
             '-x', x_pose,
             '-y', y_pose,
-            '-z', '0.01'
+            '-z', '0.05'
         ],
         output='screen',
     )
@@ -89,6 +89,6 @@ def generate_launch_description():
     # Add any conditioned actions
     ld.add_action(start_gazebo_ros_spawner_cmd)
     ld.add_action(start_gazebo_ros_bridge_cmd)
-    # ld.add_action(start_gazebo_ros_image_bridge_cmd) if TURTLEBOT3_MODEL != 'burger' else None
+    ld.add_action(start_gazebo_ros_image_bridge_cmd)
 
     return ld
