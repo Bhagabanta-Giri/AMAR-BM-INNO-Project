@@ -9,11 +9,18 @@ def generate_launch_description():
     # Use simulation time across all nodes
     use_sim_time = LaunchConfiguration('use_sim_time', default='true')
 
+    # Dynamically find the params file instead of hardcoding the home directory
+    amar_sim_dir = get_package_share_directory('amar_simulation')
+    nav2_params_path = os.path.join(amar_sim_dir, 'params', 'jnav2_params.yaml')
+
     # 1. Nav2 Navigation Launch
     nav2_launch_dir = os.path.join(get_package_share_directory('nav2_bringup'), 'launch')
     nav2_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(os.path.join(nav2_launch_dir, 'navigation_launch.py')),
-        launch_arguments={'use_sim_time': use_sim_time}.items()
+        launch_arguments={
+            'use_sim_time': use_sim_time,
+            'params_file': nav2_params_path, # FIX: Changed from 'params' to 'params_file'
+        }.items()
     )
 
     # 2. SLAM Toolbox Launch
@@ -22,9 +29,8 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(os.path.join(slam_launch_dir, 'online_async_launch.py')),
         launch_arguments={
             'use_sim_time': use_sim_time,
-            'odom_frame': 'odom',
-            'base_frame': 'base_footprint',
-            'scan_topic': '/scan'
+            # Note: If SLAM Toolbox requires 'base_footprint' instead of its default 'base_link', 
+            # you must pass a custom YAML file using the 'slam_params_file' argument here.
         }.items()
     )
 
@@ -34,21 +40,7 @@ def generate_launch_description():
         launch_arguments={'use_sim_time': use_sim_time}.items()
     )
 
-    # # 4. Gazebo world launch
-    # gazebo_launch_dir = os.path.join(get_package_share_directory('igvc_simulation'), 'launch')
-    # gazebo_launch = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource(os.path.join(gazebo_launch_dir, 'gz.launch.py'))
-    # )
-
-    # # 5. Spawn Rover launch
-    # spawn_rover_launch_dir = os.path.join(get_package_share_directory('igvc_description'), 'launch')
-    # spawn_rover_launch = IncludeLaunchDescription(
-    #     PythonLaunchDescriptionSource(os.path.join(spawn_rover_launch_dir, 'spawn_rover.launch.py'))
-    # )
-
     return LaunchDescription([
-        # gazebo_launch,
-        # spawn_rover_launch,
         nav2_launch,
         slam_launch,
         rviz_launch

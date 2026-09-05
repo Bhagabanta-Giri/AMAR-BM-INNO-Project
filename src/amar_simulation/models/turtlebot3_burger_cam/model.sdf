@@ -10,14 +10,14 @@
       <inertial>
         <pose>-0.080 0 0.175 0 0 0</pose>
         <inertia>
-          <ixx>70.7006</ixx>
-          <ixy>4.686399e-10</ixy>
-          <ixz>-1.09525703e-08</ixz>
-          <iyy>70.7006</iyy>
-          <iyz>2.8582649e-09</iyz>
-          <izz>63.7744</izz>
+          <ixx>0.3</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.3</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.3</izz>
         </inertia>
-        <mass>12.9021</mass>
+        <mass>12.9</mass>
       </inertial>
 
       <collision name="base_collision">
@@ -167,14 +167,14 @@
       <inertial>
         <pose>0 0.20 0.0575 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.17733</ixx>
-          <ixy>-9.3392e-12</ixy>
-          <ixz>1.04909e-11</ixz>
-          <iyy>0.3215</iyy>
-          <iyz>5.75694e-11</iyz>
-          <izz>0.17733</izz>
+          <ixx>0.001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.002</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.001</izz>
         </inertia>
-        <mass>0.44529</mass>
+        <mass>0.445</mass>
       </inertial>
 
       <collision name="wheel_left_collision">
@@ -188,9 +188,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
-              <fdir1>0 0 0</fdir1>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -199,8 +199,8 @@
             <ode>
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
-              <kp>1e+5</kp>
-              <kd>1</kd>
+              <kp>1e7</kp>
+              <kd>100</kd>
               <max_vel>0.01</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
@@ -228,14 +228,14 @@
       <inertial>
         <pose>0 -0.20 0.0575 -1.57 0 0</pose>
         <inertia>
-          <ixx>0.17733</ixx>
-          <ixy>-9.3392e-12</ixy>
-          <ixz>1.04909e-11</ixz>
-          <iyy>0.3215</iyy>
-          <iyz>5.75694e-11</iyz>
-          <izz>0.17733</izz>
+          <ixx>0.001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.002</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.001</izz>
         </inertia>
-        <mass>0.44529</mass>
+        <mass>0.445</mass>
       </inertial>
 
       <collision name="wheel_right_collision">
@@ -249,9 +249,9 @@
         <surface>
           <friction>
             <ode>
-              <mu>100000.0</mu>
-              <mu2>100000.0</mu2>
-              <fdir1>0 0 0</fdir1>
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+              <fdir1>0 0 1</fdir1>
               <slip1>0.0</slip1>
               <slip2>0.0</slip2>
             </ode>
@@ -260,8 +260,8 @@
             <ode>
               <soft_cfm>0</soft_cfm>
               <soft_erp>0.2</soft_erp>
-              <kp>1e+5</kp>
-              <kd>1</kd>
+              <kp>1e7</kp>
+              <kd>100</kd>
               <max_vel>0.01</max_vel>
               <min_depth>0.001</min_depth>
             </ode>
@@ -381,7 +381,7 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <effort>20</effort>
+          <effort>100</effort>
         </limit>
       </axis>
     </joint>
@@ -393,7 +393,7 @@
       <axis>
         <xyz>0 0 1</xyz>
         <limit>
-          <effort>20</effort>
+          <effort>100</effort>
         </limit>
       </axis>
     </joint>
