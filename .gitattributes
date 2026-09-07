@@ -1,3 +1,8 @@
+# Stop treating folders like documentation or external vendors
+docs/**       linguist-documentation=false
+examples/**   linguist-documentation=false
+
+# Re-enable the files for stats
 *.xml   linguist-detectable=true
 *.urdf  linguist-detectable=true linguist-language=xml
 *.sdf   linguist-detectable=true linguist-language=xml
