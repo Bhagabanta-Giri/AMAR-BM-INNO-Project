@@ -98,7 +98,7 @@ Running the biomedical signal-processing pipeline automatically generates:
                                 ▼
                        ┌─────────────────┐
                        │ Gazebo / RViz2  │
-                       │   Simulation   │
+                       │   Simulation    │
                        └─────────────────┘
 
 Bio-Scan Processing:
