@@ -1,0 +1,4 @@
+*.xml   linguist-detectable=true
+*.urdf  linguist-detectable=true linguist-language=xml
+*.sdf   linguist-detectable=true linguist-language=xml
+*.xacro linguist-detectable=true linguist-language=xml
