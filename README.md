@@ -91,7 +91,7 @@ Running the biomedical signal-processing pipeline automatically generates:
              │                 │                  │
              ▼                 ▼                  ▼
        ┌────────────────────────────────────────────────┐
-       │                    ROS 2                        │
+       │                    ROS 2                       │
        │  Robot Description │ Navigation │ Data Topics  │
        └────────────────────────┬───────────────────────┘
                                 │
