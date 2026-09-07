@@ -4,6 +4,6 @@ examples/**   linguist-documentation=false
 
 # Re-enable the files for stats
 *.xml   linguist-detectable=true
-*.urdf  linguist-detectable=true linguist-language=xml
-*.sdf   linguist-detectable=true linguist-language=xml
-*.xacro linguist-detectable=true linguist-language=xml
+*.urdf  linguist-detectable=true linguist-language=urdf
+*.sdf   linguist-detectable=true linguist-language=sdf
+*.xacro linguist-detectable=true linguist-language=xacro
