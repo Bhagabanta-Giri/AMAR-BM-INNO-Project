@@ -564,6 +564,15 @@ Some simulation assets are derived from or based on TurtleBot3 / Open Robotics r
 
 ---
 
+## Authors:
+* **Bhagabanta Giri** *B.Tech, Biomedical Engineering* **NIT Rourkela**
+* **Meghna Vijesh** *B.Tech, Biomedical Engineering* **NIT Rourkela**
+* **Satyam Kalapahad** *B.Tech, Biomedical Engineering* **NIT Rourkela**
+* **Riyana P A** *B.Tech, Biomedical Engineering* **NIT Rourkela**
+* **Sai Arpit Dash** *B.Tech, Biomedical Engineering* **NIT Rourkela**
+
+---
+
 ## AMAR
 
 **Autonomous Medical Assistance Rover**
